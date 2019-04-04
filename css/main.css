@@ -3,6 +3,16 @@
           box-sizing: border-box; }
 
 @font-face {
+  font-family: 'Montserrat Alternates', sans-serif;
+  src: url(../fonts/Montserrat_Alternates/MontserratAlternates-Medium.ttf);
+  font-weight: 500; }
+
+@font-face {
+  font-family: 'Montserrat Alternates', sans-serif;
+  src: url(../fonts/Montserrat_Alternates/MontserratAlternates-Bold.ttf);
+  font-weight: 700; }
+
+@font-face {
   font-family: IBMPlexSans;
   src: url(../fonts/IBMPlexSans/IBMPlexSans-Regular.ttf);
   font-weight: normal; }
@@ -30,18 +40,32 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
   margin-left: -15px;
   margin-right: -15px;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  -o-transition: transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease; }
 
 .project-slaider__slaid {
-  -webkit-flex-basis: 50%;
-      -ms-flex-preferred-size: 50%;
-          flex-basis: 50%;
+  -webkit-flex-basis: 33.33333%;
+      -ms-flex-preferred-size: 33.33333%;
+          flex-basis: 33.33333%;
+  max-width: 33.33333%;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
   padding-right: 15px;
   padding-left: 15px;
   -webkit-box-sizing: border-box;
@@ -50,7 +74,11 @@ body {
 .project-slaider__slaid-wrap {
   -webkit-box-shadow: 5px 5px 25px 1px rgba(0, 0, 0, 0.33);
           box-shadow: 5px 5px 25px 1px rgba(0, 0, 0, 0.33);
-  background-color: #ffffff; }
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  background-color: #ffffff;
+  height: 167px;
+  width: 100%; }
 
 .project-slaider__slaid-link {
   text-decoration: none;
@@ -63,16 +91,79 @@ body {
   -webkit-flex-basis: 50%;
       -ms-flex-preferred-size: 50%;
           flex-basis: 50%;
-  font-family: IBMPlexSans;
-  font-size: 42px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 15px;
   font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #b87e62; }
+  line-height: 1.75;
+  letter-spacing: 1px;
+  color: #3f3b4d;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.slaid-title__text {
+  position: relative; }
 
 .project-slaider__slaid-img {
   -webkit-flex-basis: 50%;
       -ms-flex-preferred-size: 50%;
-          flex-basis: 50%; }
+          flex-basis: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse; }
+
+.project-slaider__slaid-image {
+  height: 167px;
+  width: auto;
+  margin-right: 0px;
+  margin-left: auto;
+  -webkit-border-radius: 0 5px 5px 0;
+          border-radius: 0 5px 5px 0; }
+
+.project-slaider__controls {
+  position: relative;
+  width: 100%; }
+
+.project-slaider__arrows {
+  position: absolute;
+  top: -webkit-calc(50%);
+  top: calc(50%);
+  width: 100%; }
+
+.project-slaider__arrow-item {
+  background: url(../img/arrow.png) 0 0 no-repeat;
+  position: absolute;
+  cursor: pointer;
+  width: 32px;
+  height: 58px; }
+
+.project-slaider__arrow-item.on-left {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  left: -40px; }
+
+.project-slaider__arrow-item.on-right {
+  right: -40px; }
+
+.slider__control_show {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
